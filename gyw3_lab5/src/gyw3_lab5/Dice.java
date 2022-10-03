@@ -1,7 +1,6 @@
 package gyw3_lab5;
 
 import java.util.Random;
-import javax.swing.JOptionPane;
 
 public class Dice {
 	
