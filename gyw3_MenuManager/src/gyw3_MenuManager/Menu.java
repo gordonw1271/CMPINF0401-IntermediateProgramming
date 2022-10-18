@@ -1,11 +1,18 @@
 package gyw3_MenuManager;
 
+/**
+ * Class Menu
+ * * author : Gordon Wong
+ * created: 10/11/2022
+ */
+
+
 public class Menu {
 	private String name;
-	private Entree entree = new Entree();
-	private Salad salad = new Salad();
-	private Side side = new Side();
-	private Dessert dessert = new Dessert();
+	private Entree entree;
+	private Salad salad;
+	private Side side;
+	private Dessert dessert;
 	
 //Constructors
 	
@@ -28,35 +35,55 @@ public class Menu {
 	}
 	
 // Methods
+	
 	public int totalCalories() {
-		return(entree.getCal() + salad.getCal() + side.getCal() + dessert.getCal());
+		int total = 0;
+		if(this.salad != null) {
+			total += salad.getCal();;
+		}
+		if(this.entree != null) {
+			total += entree.getCal();;
+		}
+		if(this.side != null) {
+			total += side.getCal();;
+		}
+		if(this.dessert != null) {
+			total += dessert.getCal();;
+		}
+		
+		return(total);
 	}
 	
-	public void description() {
-		if(entree.getDescription() == null) {
-			System.out.println("Entree: N/A");
+	public String description() {
+		String d = "";
+		
+		if(this.entree == null) {
+			d = d + "Entree: N/A";
 		}else {
-			System.out.println("Entree: " + entree.getDescription());
+			d = d + "Entree: " + entree.getDescription();
 		}
-		if(side.getDescription() == null) {
-			System.out.println("Side: N/A");
+		if(this.side == null) {
+			d = d + "\nSide: N/A";
 		}else {
-			System.out.println("Side: " + side.getDescription());
+			d = d + "\nSide: " + side.getDescription();
 		}
-		if(salad.getDescription() == null) {
-			System.out.println("Salad: N/A");
+		if(this.salad == null) {
+			d = d +"\nSalad: N/A";
 		}else {
-			System.out.println("Salad: " + salad.getDescription());
+			d = d +"\nSalad: " + salad.getDescription();
 		}
-		if(dessert.getDescription() == null) {
-			System.out.println("Dessert: N/A");
+		if(this.dessert == null) {
+			d = d + "\nDessert: N/A";
 		}else {
-			System.out.println("Dessert: " + dessert.getDescription());
+			d = d +"\nDessert: " + dessert.getDescription();
 		}
+		
+		return d;
 
 	}
 	
 // Setters
+	
 	public void setName(String newName) {
 		this.name = newName;
 	}
@@ -75,6 +102,27 @@ public class Menu {
 	
 	public void setDessert(Dessert dessert) {
 		this.dessert = dessert;
+		
+	}
+//Getters 
+	public String getName() {
+		return(name);
+	}
+	
+	public String getEntree() {
+		return(entree.getName());
+	}
+	
+	public String getSide() {
+		return(side.getName());
+	}
+	
+	public String getSalad() {
+		return(salad.getName());
+	}
+	
+	public String getDessert() {
+		return(dessert.getName());
 	}
 
 }

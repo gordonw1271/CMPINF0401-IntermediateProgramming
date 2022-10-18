@@ -1,13 +1,17 @@
 package gyw3_MenuManager;
 
+/**
+ * Class Entree
+ * * author : Gordon Wong
+ * created: 10/11/2022
+ */
+
 public class Entree {
 	private String name;
 	private String description;
 	private int calories;
 
-// Constructor Entree
-	public Entree() {
-	}
+// Constructors
 	
 	public Entree(String name, String desc, int cal) {
 		this.name = name;
@@ -16,6 +20,7 @@ public class Entree {
 	}
 
 // Getters 
+	
 	public int getCal() {
 		return calories;
 	}
@@ -29,6 +34,7 @@ public class Entree {
 	}
 
 // Setters
+	
 	public void setName(String newName) {
 		this.name = newName;
 	}
@@ -41,4 +47,3 @@ public class Entree {
 		this.calories = newCal;
 	}
 }
-

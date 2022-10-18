@@ -1,12 +1,17 @@
 package gyw3_MenuManager;
 
+/**
+ * Class Dessert
+ * * author : Gordon Wong
+ * created: 10/11/2022
+ */
+
 public class Dessert {
 	private String name;
 	private String description;
 	private int calories;
 	
-	public Dessert() {
-	}
+// Constructors
 	
 	public Dessert(String name, String desc, int cal) {
 		this.name = name;
@@ -15,6 +20,7 @@ public class Dessert {
 	}
 	
 // Getters
+	
 	public int getCal() {
 		return calories;
 	}
@@ -28,6 +34,7 @@ public class Dessert {
 	}
 	
 // Setters
+	
 	public void setName(String newName) {
 		this.name = newName;
 	}

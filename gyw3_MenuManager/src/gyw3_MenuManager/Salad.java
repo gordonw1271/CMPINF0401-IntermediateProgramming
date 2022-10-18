@@ -1,12 +1,17 @@
 package gyw3_MenuManager;
 
+/**
+ * Class Salad
+ * * author : Gordon Wong
+ * created: 10/11/2022
+ */
+
 public class Salad {
 	private String name;
 	private String description;
 	private int calories;
 	
-	public Salad() {
-	}
+// Constructors
 	
 	public Salad(String name, String desc, int cal) {
 		this.name = name;
@@ -14,7 +19,8 @@ public class Salad {
 		calories = cal;
 	}
 	
-//Getters
+// Getters
+	
 	public int getCal() {
 		return calories;
 	}
@@ -28,6 +34,7 @@ public class Salad {
 	}
 	
 // Setters
+	
 	public void setName(String newName) {
 		this.name = newName;
 	}
