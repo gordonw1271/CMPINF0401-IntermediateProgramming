@@ -22,7 +22,6 @@ public class FileManager {
 	 * @param fileName a String
 	 * @return ArrLst an Array List of Entrees
 	 */
-
 	public static ArrayList<Entree> readEntrees(String fileName) throws FileNotFoundException{
 		ArrayList<Entree> ArrLst = new ArrayList<Entree>();
 
@@ -75,7 +74,7 @@ public class FileManager {
 		return(ArrLst);
 	}
 	/**
-	 * Method readSalads
+	 * Method readDessserts
 	 * @param fileName a String
 	 * @return ArrLst an Array List of Desserts
 	 */
