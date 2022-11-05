@@ -1,9 +1,8 @@
 package gyw3_MenuManager_v2;
 
-/*
- * Class Side
- * * author : Gordon Wong
- * created: 11/4/2022
+/** Class Side
+ *  author : Gordon Wong
+ *  created: 11/4/2022
  */
 
 public class Side {

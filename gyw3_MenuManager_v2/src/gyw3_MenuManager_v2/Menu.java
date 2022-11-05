@@ -1,8 +1,8 @@
 package gyw3_MenuManager_v2;
 
-/* Class Menu
-* * author : Gordon Wong
-* created: 11/4/2022
+/** Class Menu
+*   author : Gordon Wong
+*   created: 11/4/2022
 */
 
 

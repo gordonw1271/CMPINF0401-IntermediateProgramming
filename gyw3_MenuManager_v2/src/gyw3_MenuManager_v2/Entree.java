@@ -1,7 +1,7 @@
 package gyw3_MenuManager_v2;
 
-/* Class Entree
-* * author : Gordon Wong
+/** Class Entree
+* author : Gordon Wong
 * created: 11/4/2022
 */
 
