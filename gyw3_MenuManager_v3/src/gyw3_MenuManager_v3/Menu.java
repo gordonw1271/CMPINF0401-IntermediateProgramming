@@ -1,9 +1,9 @@
 package gyw3_MenuManager_v3;
 
 /** Class Menu
-*   author : Gordon Wong
-*   created: 11/4/2022
-*/
+ *   author : Gordon Wong
+ *   created: 11/28/2022
+ */
 
 
 public class Menu {
@@ -12,19 +12,16 @@ public class Menu {
 	private Salad salad;
 	private Side side;
 	private Dessert dessert;
-	
-//Constructors
-	
+
+	//Constructors
 	public Menu(String name) {
 		this.name = name;
 	}
-	
 	public Menu(String name, Entree entree, Side side) {
 		this.name = name;
 		this.entree = entree;
 		this.side = side;
 	}
-	
 	public Menu(String name, Entree entree, Side side, Salad salad, Dessert dessert) {
 		this.name = name;
 		this.entree = entree;
@@ -32,9 +29,7 @@ public class Menu {
 		this.salad = salad;
 		this.dessert = dessert;
 	}
-	
-// Methods
-	
+	// Methods
 	public int totalCalories() {
 		int total = 0;
 		if(this.salad != null) {
@@ -49,13 +44,12 @@ public class Menu {
 		if(this.dessert != null) {
 			total += dessert.getCal();;
 		}
-		
+
 		return(total);
 	}
-	
 	public String description() {
 		String d = "";
-		
+
 		if(this.entree == null) {
 			d = d + "Entree: N/A";
 		}else {
@@ -76,50 +70,48 @@ public class Menu {
 		}else {
 			d = d +"\nDessert: " + dessert.getDescription();
 		}
-		
-		return d;
 
+		return d;
 	}
-	
-// Setters
-	
+	// Setters
+
 	public void setName(String newName) {
 		this.name = newName;
 	}
-	
+
 	public void setEntree(Entree entree) {
 		this.entree = entree;
 	}
-	
+
 	public void setSide(Side side) {
 		this.side = side;
 	}
-	
+
 	public void setSalad(Salad salad) {
 		this.salad = salad;
 	}
-	
+
 	public void setDessert(Dessert dessert) {
 		this.dessert = dessert;
-		
+
 	}
-//Getters 
+	//Getters 
 	public String getName() {
 		return(name);
 	}
-	
+
 	public Entree getEntree() {
 		return(entree);
 	}
-	
+
 	public Side getSide() {
 		return(side);
 	}
-	
+
 	public Salad getSalad() {
 		return(salad);
 	}
-	
+
 	public Dessert getDessert() {
 		return(dessert);
 	}
@@ -127,5 +119,4 @@ public class Menu {
 	public String toString() {
 		return this.name;
 	}
-
 }

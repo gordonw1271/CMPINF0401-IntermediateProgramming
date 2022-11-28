@@ -1,28 +1,28 @@
 package gyw3_MenuManager_v3;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
 /**
  * Class FileManager
  * author : Gordon Wong
- * created: 11/4/2022
+ * created: 11/28/2022
  */
-
 public class FileManager {
-	
+	/**
+	 * Method readItems
+	 * @param fileName a String file name
+	 * @return array list of menu items
+	 */
 	public static ArrayList<MenuItem> readItems(String fileName){
 		ArrayList<MenuItem> arrLst = new ArrayList<MenuItem>();
 		ArrayList<String[]> arrLst1 = new ArrayList<String[]>();
-		ArrayList<String[]> entrees = new ArrayList<String[]>();
-		ArrayList<String[]> desserts = new ArrayList<String[]>();
-		ArrayList<String[]> salads = new ArrayList<String[]>();
-		ArrayList<String[]> sides = new ArrayList<String[]>();
-		
-		//read through each line, split each line by @@ into an array and each array is stored in a array list
+
+		//read through each line, split each line by @@ into an array and each array is then stored in a array list
 		try {
 			FileReader fr = new FileReader(fileName); 
 			BufferedReader br = new BufferedReader(fr); 
@@ -35,22 +35,52 @@ public class FileManager {
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
 		}
-		//seperates each array in arrLst1 into entree,side,salad,and dessert array lists
-		int index = arrLst1.size();
-		for(int i = 0;i < index; i++) {
-			if(arrLst1.get(i)[1].equals("entree")) {
-				entrees.add(arrLst1.get(i));
-			}else if(arrLst1.get(i)[1].equals("side")) {
-				sides.add(arrLst1.get(i));
-			}else if(arrLst1.get(i)[1].equals("salad")) {
-				salads.add(arrLst1.get(i));
-			}else if(arrLst1.get(i)[1].equals("dessert")) {
-				desserts.add(arrLst1.get(i));
+		//checks whether element is entree,salad, side or dessert and creates the appropriate
+		//object and adds it to the output array list
+		for(int i = 0;i < arrLst1.size(); i++) {
+			if(arrLst1.get(i)[1].equalsIgnoreCase("entree")) {
+				arrLst.add(new Entree(arrLst1.get(i)[0],arrLst1.get(i)[2],Integer.parseInt(arrLst1.get(i)[3]),Double.parseDouble(arrLst1.get(i)[4])));
+			}else if(arrLst1.get(i)[1].equalsIgnoreCase("side")) {
+				arrLst.add(new Side(arrLst1.get(i)[0],arrLst1.get(i)[2],Integer.parseInt(arrLst1.get(i)[3]),Double.parseDouble(arrLst1.get(i)[4])));
+			}else if(arrLst1.get(i)[1].equalsIgnoreCase("salad")) {
+				arrLst.add(new Salad(arrLst1.get(i)[0],arrLst1.get(i)[2],Integer.parseInt(arrLst1.get(i)[3]),Double.parseDouble(arrLst1.get(i)[4])));
+			}else if(arrLst1.get(i)[1].equalsIgnoreCase("dessert")) {
+				arrLst.add(new Dessert(arrLst1.get(i)[0],arrLst1.get(i)[2],Integer.parseInt(arrLst1.get(i)[3]),Double.parseDouble(arrLst1.get(i)[4])));
 			}
 		}
-		//
-
-		System.out.println(entrees.get(0)[0]);
 		return arrLst;
+	}
+	/**
+	 * Method writeMenus
+	 * @param fileName a String file name
+	 * @param menus an array list of menus
+	 */
+	public static void writeMenus(String filename,ArrayList<Menu> menus) {
+
+		try {
+			FileWriter fw = new FileWriter(filename);
+			BufferedWriter bw = new BufferedWriter(fw);
+			for(int i = 0;i<menus.size();i++) {
+				bw.write(menus.get(i).getName());
+				bw.write("\n");
+				bw.write("Entree: "+menus.get(i).getEntree().getName()+": "+menus.get(i).getEntree().getDescription()+", Calories: "+menus.get(i).getEntree().getCal()+", Price: "+menus.get(i).getEntree().getPrice());
+				bw.write("\n");
+				bw.write("Salad: "+menus.get(i).getSalad().getName()+": "+menus.get(i).getSalad().getDescription()+", Calories: "+menus.get(i).getSalad().getCal()+", Price: "+menus.get(i).getSalad().getPrice());
+				bw.write("\n");
+				bw.write("Side: "+menus.get(i).getSide().getName()+": "+menus.get(i).getSide().getDescription()+", Calories: "+menus.get(i).getSide().getCal()+", Price: "+menus.get(i).getSide().getPrice());
+				bw.write("\n");
+				bw.write("Dessert: "+menus.get(i).getDessert().getName()+": "+menus.get(i).getDessert().getDescription()+", Calories: "+menus.get(i).getDessert().getCal()+", Price: "+menus.get(i).getDessert().getPrice());
+				bw.write("\n");
+				bw.write("Total Calories: "+menus.get(i).totalCalories());
+				bw.write("\n");
+				double tp = menus.get(i).getEntree().getPrice() + menus.get(i).getSalad().getPrice() + menus.get(i).getSide().getPrice()+ menus.get(i).getDessert().getPrice();
+				bw.write("Total Price: "+ tp);
+				bw.write("\n\n");
+			}
+			bw.close();
+			fw.close();
+		} catch (IOException e) {
+			System.out.println(e.getMessage());
+		}
 	}
 }

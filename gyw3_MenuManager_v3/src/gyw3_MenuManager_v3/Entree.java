@@ -2,7 +2,7 @@ package gyw3_MenuManager_v3;
 
 /** Class Entree
 * author : Gordon Wong
-* created: 11/4/2022
+* created: 11/28/2022
 */
 
 public class Entree extends MenuItem{

@@ -2,7 +2,7 @@ package gyw3_MenuManager_v3;
 
 /** Class Salad
 *   author : Gordon Wong
-*   created: 11/4/2022
+*   created: 11/28/2022
 */
 
 public class Salad extends MenuItem{

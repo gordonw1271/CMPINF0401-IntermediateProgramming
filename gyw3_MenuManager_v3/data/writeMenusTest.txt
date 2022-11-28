@@ -1,0 +1,16 @@
+Menu1
+Entree: Steak: Delicious Steak, Calories: 500, Price: 900.0
+Salad: Ceasar Salad: Delicious Ceasar Salad, Calories: 500, Price: 563.0
+Side: Mashed Potatoes: Delicious Mash, Calories: 300, Price: 787.0
+Dessert: Ice Cream: Delicious Vanilla Ice Cream, Calories: 800, Price: 234.0
+Total Calories: 2100
+Total Price: 2484.0
+
+Menu2
+Entree: Ribs: Delicious Ribs, Calories: 700, Price: 787.0
+Salad: House Salad: Delicious House Salad, Calories: 400, Price: 567.0
+Side: Mashed Potatoes: Delicious Mash, Calories: 300, Price: 787.0
+Dessert: Ice Cream: Delicious Vanilla Ice Cream, Calories: 800, Price: 234.0
+Total Calories: 2200
+Total Price: 2375.0
+
