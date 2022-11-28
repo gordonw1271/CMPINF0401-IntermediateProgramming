@@ -1,0 +1,5 @@
+Caesar Salad@@Delicious Caesar Salad@@700
+House Salad@@House salad served with dressing@@500
+Light Salad@@A delicious light salad with crutons@@400
+Medium Salad@@A delicious medium salad with chicken@@550
+Heavy Salad@@A delicious heavy salad with chicken and crutons@@650
