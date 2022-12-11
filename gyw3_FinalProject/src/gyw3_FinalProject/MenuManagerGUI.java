@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class MenuManagerGUI {
-	
+
 	private MenuManager menuManager;
 	private JFrame frame;
 	private JFrame frame1;
@@ -52,32 +52,32 @@ public class MenuManagerGUI {
 	private JButton b6 = new JButton("Delete all");
 	private JButton b7 = new JButton("Save to file");
 	private JList<Menu> li;
-	
+
 	public MenuManagerGUI() {
-		
+
 		menuManager = new MenuManager("data/dishes.txt");
-		
+
 		////////////////////////////////////////////////////////////////
 		//Build Your Own Menu Panel
 		jComE = new JComboBox(menuManager.getEntreeArray().toArray(new Entree[0]));
 		jComE.setBounds(175,30,195,40);
-	
+
 		jComSi = new JComboBox(menuManager.getSideArray().toArray(new Side[0]));
 		jComSi.setBounds(175,90,195,40);
-		
+
 		jComSa = new JComboBox(menuManager.getSaladArray().toArray(new Salad[0]));
 		jComSa.setBounds(175,150,195,40);
-		
+
 		jComD = new JComboBox(menuManager.getDessertArray().toArray(new Dessert[0]));
 		jComD.setBounds(175,210,195,40);
-		
+
 		lE.setBounds(60,20,50,50);
 		lSi.setBounds(60,80,50,50);
 		lSa.setBounds(60,140,50,50);
 		lD.setBounds(60,200,50,50);
-		
+
 		b1.setBounds(30,275,340,35);
-		
+
 		//Create Menu button 
 		final DefaultListModel model = new DefaultListModel();
 		b1.addActionListener(new ActionListener() {
@@ -124,7 +124,7 @@ public class MenuManagerGUI {
 				model.addElement(menuManager.maxCaloriesMenu(name));
 			}
 		});
-		
+
 		JPanel p = new JPanel(null); 
 		p.setName("Build your own Menu");
 		p.setBounds(0,0,400,350);
@@ -138,13 +138,13 @@ public class MenuManagerGUI {
 		p.add(lSa);
 		p.add(lD);
 		p.add(b1);
-		
+
 		////////////////////////////////////////////////////////////
 		// Or Generate a Menu Panel
 		b2.setBounds(30,40,340,35);
 		b3.setBounds(30,110,340,35);
 		b4.setBounds(30,180,340,35);
-		
+
 		JPanel p1 = new JPanel(null); 
 		p1.setName("Or generate a Menu");
 		p1.setBounds(0,350,400,250);
@@ -161,7 +161,7 @@ public class MenuManagerGUI {
 		li.setBounds(10,10,280,500);
 		p2.add(li);
 		// Details Button
-	
+
 		b5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(li.getSelectedValue() != null) {
@@ -210,7 +210,7 @@ public class MenuManagerGUI {
 					double p = li.getSelectedValue().getEntree().getPrice()+li.getSelectedValue().getSide().getPrice()+li.getSelectedValue().getSalad().getPrice()+li.getSelectedValue().getDessert().getPrice();
 					price = new JLabel("" + p);
 					price.setBounds(10,10,50,10);
-					
+
 					frame1 = new JFrame("Menu: "+ li.getSelectedValue());
 					frame1.setVisible(true);
 					frame1.setLocationRelativeTo(null);
@@ -259,14 +259,14 @@ public class MenuManagerGUI {
 				FileManager.writeMenus("data/menus.txt", m);
 			}
 		});
-		
+
 		/////////////////////////////////////////////////////////////
 		frame = new JFrame("Menu Manager");
 		frame.getContentPane().setLayout(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLocationRelativeTo(null);
 		frame.setSize(745, 650);
-		
+
 		frame.add(p);
 		frame.add(p1);
 		frame.add(p2);
@@ -282,10 +282,10 @@ public class MenuManagerGUI {
 	}
 
 	public static void main(String[] args) {
-		
+
 		MenuManagerGUI GUI = new MenuManagerGUI();
 		GUI.frame.setVisible(true);
-		
+
 
 	}
 
